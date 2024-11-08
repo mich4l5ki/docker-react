@@ -2,7 +2,7 @@ name: Deploy Frontend
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -19,8 +19,8 @@ jobs:
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v20
         with:
-          aws_access_key: ${{ secrets.AWS_ACCESS_KEY}}
-          aws_secret_key: ${{ secrets.AWS_SECRET_KEY}}
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
           application_name: frontend
           environment_name: Frontend-env
           existing_bucket_name: elasticbeanstalk-eu-north-1-872515286543
